@@ -12,11 +12,60 @@
     <name>web</name>
     <url>http://maven.apache.org</url>
 
+    <properties>
+        <spring.version>4.3.2.RELEASE</spring.version>
+    </properties>
+
     <dependencies>
-        <!--<dependency>
+        <!-- spring相关依赖 start-->
+        <!-- spring的 context 上下文即 IOC 容器 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- spring mvc 依赖 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- bean工厂以及 bean 的装配 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- 依赖注入 IOC 与 DI 的最基本实现 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- spring相关依赖 end -->
+
+        <!-- velocity相关配置 start-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-tools</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- velocity相关配置 end-->
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-        </dependency>-->
+        </dependency>
     </dependencies>
     <build>
         <finalName>web</finalName>
