@@ -11,7 +11,9 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 >
+    <!-- 扫描 controller -->
     <context:component-scan base-package="com.sheng.controller"/>
+    <!-- 启动 mvc 注解，requestmapping 这些注解需要它来支持 -->
     <mvc:annotation-driven/>
 
     <!--规定模板文件的类型和位置-->
