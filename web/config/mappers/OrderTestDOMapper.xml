@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sheng.codetest.dao.OrderTestDOMapper" >
+  <resultMap id="BaseResultMap" type="com.sheng.codetest.modal.entity.OrderTestDO" >
+    <constructor >
+      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="car_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="model_code" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="date_create" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="date_update" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="date_delete" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, car_id, model_code, date_create, date_update, date_delete
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_test
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from order_test
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.sheng.codetest.modal.entity.OrderTestDO" >
+    insert into order_test (id, car_id, model_code, 
+      date_create, date_update, date_delete
+      )
+    values (#{id,jdbcType=BIGINT}, #{carId,jdbcType=VARCHAR}, #{modelCode,jdbcType=VARCHAR}, 
+      #{dateCreate,jdbcType=TIMESTAMP}, #{dateUpdate,jdbcType=TIMESTAMP}, #{dateDelete,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sheng.codetest.modal.entity.OrderTestDO" >
+    insert into order_test
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="carId != null" >
+        car_id,
+      </if>
+      <if test="modelCode != null" >
+        model_code,
+      </if>
+      <if test="dateCreate != null" >
+        date_create,
+      </if>
+      <if test="dateUpdate != null" >
+        date_update,
+      </if>
+      <if test="dateDelete != null" >
+        date_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="carId != null" >
+        #{carId,jdbcType=VARCHAR},
+      </if>
+      <if test="modelCode != null" >
+        #{modelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dateCreate != null" >
+        #{dateCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dateUpdate != null" >
+        #{dateUpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dateDelete != null" >
+        #{dateDelete,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sheng.codetest.modal.entity.OrderTestDO" >
+    update order_test
+    <set >
+      <if test="carId != null" >
+        car_id = #{carId,jdbcType=VARCHAR},
+      </if>
+      <if test="modelCode != null" >
+        model_code = #{modelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="dateCreate != null" >
+        date_create = #{dateCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dateUpdate != null" >
+        date_update = #{dateUpdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dateDelete != null" >
+        date_delete = #{dateDelete,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sheng.codetest.modal.entity.OrderTestDO" >
+    update order_test
+    set car_id = #{carId,jdbcType=VARCHAR},
+      model_code = #{modelCode,jdbcType=VARCHAR},
+      date_create = #{dateCreate,jdbcType=TIMESTAMP},
+      date_update = #{dateUpdate,jdbcType=TIMESTAMP},
+      date_delete = #{dateDelete,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,7 +1,7 @@
-package com.sheng.basic;
+package com.sheng.codetest.basic;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 /**
  * Created by shengxingyue on 2017/8/29.
  */
