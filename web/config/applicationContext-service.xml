@@ -8,4 +8,5 @@
                         http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <context:component-scan base-package="com.sheng.codetest.service.**"/>
     <context:annotation-config/>
+    <!--  todo 以上两个注解，第一个扫描注解是不是依赖第二个注解-->
 </beans>
