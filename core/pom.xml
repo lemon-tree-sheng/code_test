@@ -11,15 +11,37 @@
 
     <artifactId>core</artifactId>
 
+    <properties>
+        <spring.version>4.3.2.RELEASE</spring.version>
+    </properties>
 
     <dependencies>
-        <!-- spring -->
+        <!-- spring相关依赖 start-->
+        <!-- spring的 context 上下文即 IOC 容器 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- bean工厂以及 bean 的装配 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- 依赖注入 IOC 与 DI 的最基本实现 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <!-- 用于提供 spring 的声明式事务 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>4.3.2.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
+        <!-- spring相关依赖 end -->
 
         <!-- spring 整合 mybatis -->
         <dependency>

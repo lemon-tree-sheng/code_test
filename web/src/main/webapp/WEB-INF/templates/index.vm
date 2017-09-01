@@ -1,2 +1,1 @@
-hello velocity!!
-${orderTestDO.id}
+hello , ${orderTestDO.modelCode}

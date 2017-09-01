@@ -2,12 +2,12 @@ package com.sheng.codetest.modal.entity;
 
 import java.util.Date;
 
-public class OrderTestDO {
-    private Long id; // todo lombok
+public class OrderUserTestDO {
+    private Long id;
 
-    private String carId;
+    private String orderTestId;
 
-    private String modelCode;
+    private String userName;
 
     private Date dateCreate;
 
@@ -15,16 +15,16 @@ public class OrderTestDO {
 
     private Date dateDelete;
 
-    public OrderTestDO(Long id, String carId, String modelCode, Date dateCreate, Date dateUpdate, Date dateDelete) {
+    public OrderUserTestDO(Long id, String orderTestId, String userName, Date dateCreate, Date dateUpdate, Date dateDelete) {
         this.id = id;
-        this.carId = carId;
-        this.modelCode = modelCode;
+        this.orderTestId = orderTestId;
+        this.userName = userName;
         this.dateCreate = dateCreate;
         this.dateUpdate = dateUpdate;
         this.dateDelete = dateDelete;
     }
 
-    public OrderTestDO() {
+    public OrderUserTestDO() {
         super();
     }
 
@@ -36,20 +36,20 @@ public class OrderTestDO {
         this.id = id;
     }
 
-    public String getCarId() {
-        return carId;
+    public String getOrderTestId() {
+        return orderTestId;
     }
 
-    public void setCarId(String carId) {
-        this.carId = carId == null ? null : carId.trim();
+    public void setOrderTestId(String orderTestId) {
+        this.orderTestId = orderTestId == null ? null : orderTestId.trim();
     }
 
-    public String getModelCode() {
-        return modelCode;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setModelCode(String modelCode) {
-        this.modelCode = modelCode == null ? null : modelCode.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
     public Date getDateCreate() {
