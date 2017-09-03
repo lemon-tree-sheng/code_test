@@ -20,7 +20,7 @@ public class Index {
     @Autowired
     private OrderTestService orderTestService;
 
-    @RequestMapping("/index")
+    @RequestMapping("/index.do")
     public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView();
         OrderTestDO orderTestDO = orderTestDOMapper.selectByPrimaryKey(1L);

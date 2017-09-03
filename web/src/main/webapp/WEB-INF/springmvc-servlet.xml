@@ -34,4 +34,10 @@
         <property name="contentType" value="text/html;charset=utf-8"/>
     </bean>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.sheng.interceptor.LoginIntercepter"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
