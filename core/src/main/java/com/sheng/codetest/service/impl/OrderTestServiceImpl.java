@@ -67,4 +67,11 @@ public class OrderTestServiceImpl implements OrderTestService {
             System.out.println("hello");
         }
     }
+
+    // 一个用于 spring-test 的测试方法
+    public void springTest() {
+        OrderTestDO orderTestDO = orderTestDOMapper.selectByPrimaryKey(1L);
+        orderTestDO.setCarId("我是一个测试 id");
+        orderTestDOMapper.updateByPrimaryKey(orderTestDO);
+    }
 }

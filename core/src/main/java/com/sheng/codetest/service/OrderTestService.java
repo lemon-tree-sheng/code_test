@@ -8,4 +8,6 @@ import com.sheng.codetest.modal.entity.OrderTestDO;
 public interface OrderTestService {
 
     void testTransactional(OrderTestDO orderTestDO);
+
+    void springTest();
 }
