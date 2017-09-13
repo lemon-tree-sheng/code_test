@@ -1,6 +1,7 @@
 package com.sheng.codetest.modal.entity;
 
 import java.util.Date;
+import java.util.Map;
 
 public class OrderTestDO {
     private Long id; // todo lombok
@@ -8,6 +9,10 @@ public class OrderTestDO {
     private String carId;
 
     private String modelCode;
+
+    private Map<String, Object> data;
+
+    private OrderUserTestDO orderUserTestDO;
 
     private Date dateCreate;
 
@@ -74,5 +79,21 @@ public class OrderTestDO {
 
     public void setDateDelete(Date dateDelete) {
         this.dateDelete = dateDelete;
+    }
+
+    public Map<String, Object> getData() {
+        return data;
+    }
+
+    public void setData(Map<String, Object> data) {
+        this.data = data;
+    }
+
+    public OrderUserTestDO getOrderUserTestDO() {
+        return orderUserTestDO;
+    }
+
+    public void setOrderUserTestDO(OrderUserTestDO orderUserTestDO) {
+        this.orderUserTestDO = orderUserTestDO;
     }
 }
