@@ -2,6 +2,7 @@ package com.sheng.codetest.basic;
 
 import com.sheng.codetest.modal.entity.OrderTestDO;
 import com.sheng.codetest.modal.entity.OrderUserTestDO;
+import com.sheng.codetest.modal.mapper.OrderTestDOMapper;
 import com.sheng.codetest.modal.vo.OrderTestVO;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
@@ -17,7 +18,7 @@ import java.util.Map;
  */
 public class BeanUtilsDeapCopy {
 
-    @Test
+//    @Test
     public void testBeanUtils() {
         OrderTestDO orderTestDO = new OrderTestDO();
         orderTestDO.setId(123L);
@@ -34,6 +35,24 @@ public class BeanUtilsDeapCopy {
         OrderTestVO orderTestVO = new OrderTestVO();
         BeanUtils.copyProperties(orderTestDO, orderTestVO);
 
+        System.out.println(orderTestVO);
+    }
+
+    @Test
+    public void testMapStruct() {
+        OrderTestDO orderTestDO = new OrderTestDO();
+        orderTestDO.setId(123L);
+        orderTestDO.setCarId("hjxolj");
+        orderTestDO.setModelCode("mmhjoiuj-a");
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("aaa", "bbb");
+        map.put("bbb", new OrderUserTestDO());
+        orderTestDO.setData(map);
+        OrderUserTestDO orderUserTestDO = new OrderUserTestDO();
+        orderUserTestDO.setUserName("xiaoming");
+        orderTestDO.setOrderUserTestDO(orderUserTestDO);
+
+        OrderTestVO orderTestVO = OrderTestDOMapper.INSTANCE.orderTestDOToOrderTestVO(orderTestDO);
         System.out.println(orderTestVO);
     }
 }
